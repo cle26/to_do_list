@@ -1,0 +1,19 @@
+services:
+  php:
+    build: .
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 4000
+      DB_NAME: "to_do_list"
+      DB_USERNAME: "root"
+      DB_PASSWORD: ""
+    ports:
+      - "8080:80"
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: "to_do_list"
+      MYSQL_PASSWORD: "oui"
+      MYSQL_ROOT_PASSWORD: "oui"
+    ports:
+      - "4000:80"
